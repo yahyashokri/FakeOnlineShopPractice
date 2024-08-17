@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 body{
     height: 100vh;
     width: 100%;
     margin: 0px;
+    margin-top: 50px;
  display: grid;
  grid-template-rows: 50px 1fr;
  grid-template-columns: 1fr;
@@ -9,12 +11,100 @@ body{
 }
 .head{
     grid-area: 1/1/2/2;
-    height: 100%;
+    height: 50px;
     width: 100%;
     background-color:rgb(172, 169, 169);
+    position: fixed;
+    width: 100%;
+    top:0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 2;
 }
 .container{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(auto-track-list);
+    grid-template-rows: repeat(auto);
+}
+.productCard{
+    margin: 15px;
+    padding: 10px;
+    border-radius: 7%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(146, 141, 141);
+    text-align: center;
+    display: grid;
+    grid-template-rows: 50px 1fr 60px 20px 50px 40px;
+    grid-template-columns: 4fr 1fr 1fr;
+}
+.productCard:hover img {
+    transform: scale(1.02);
+    opacity: 0.8;
+}
+.productCard h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(172, 169, 169);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    cursor:default;
+    z-index: 1;
+}
+.productCard h2:hover {
+    color: rgb(192, 192, 192);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.productCard p {
+    font-size: 0.9em;
+    font-family: Arial, sans-serif;
+    color: rgb(85, 85, 85);
+}
+.productCard p:hover{
+    color: rgb(26, 26, 26);
+    transition: color 0.8s ease;
+}
+.productCard button {
+    background-color: rgba(247, 34, 34, 0.836); 
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+.productCard button:hover {
+    background-color: rgb(250, 16, 16);
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.title{
+    grid-area:1/1/2/4 ;
+}
+.description{
+    grid-area:2/2/3/4 ;
+}
+.price{
+    grid-area: 3/2/4/4;
+    display: block;
+}
+.rating{
+    grid-area: 4/2/5/4;
+    display: block;
+}
+.ratingCount{
+    grid-area: 5/2/6/4;
+    display: block;
+}
+.image{
+    grid-area: 2/1/6/2 ;
+    border-bottom: 1px solid rgb(146, 141, 141);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.category{
+    grid-area: 6/1/7/2;
+    color: rgba(22, 21, 21, 0.644);
+    display: block;
+}
+.btn{
+    grid-area:6/2/7/4 ;
 }

@@ -10,13 +10,16 @@ addEventListener("load", async event =>{
             productCard.classList.add("productCard")
             productCard.setAttribute("id",`${product.id}`)
             //?First way
-            // productCard.innerHTML = `
-            // <h2 class="title">${product.title}</h2>
-            // <p class="description">${product.description}</p>
-            // <p class="price">Price: $${product.price}</p>
-            // <img src="${product.image}" alt="${product.title}" width="450px" height="450px">
-            // <button class="btn">Add to Basket</button>
-            // `;
+            productCard.innerHTML = `
+            <h2 class="title">${product.title}</h2>
+            <p class="description">${product.description}</p>
+            <p class="price">Price: $${product.price}</p>
+            <p class="rating">Rating: ${product.rating.rate}</p>
+            <p class="ratingCount">${product.rating.count} People rated</p>
+            <img src="${product.image}" alt="${product.title}" class="image" width="350px" height="350px">
+            <span class="category">Product category: ${product.category}</span>
+            <button class="btn">Add to Basket</button>
+            `;
             //?Second way
             // const title = document.createElement("h2");
             // title.classList.add("title")
@@ -40,7 +43,7 @@ addEventListener("load", async event =>{
             // productCard.appendChild(price)
             // productCard.appendChild(image)
 
-            // container.appendChild(productCard)
+            container.appendChild(productCard)
         });
         //?third way
         // products.forEach( product => {
