@@ -1,10 +1,12 @@
 const container = document.getElementById("cont")
 const header = document.getElementById("header")
+const loader = document.getElementById("loader")
 
 addEventListener("load", async event =>{
     try{
         const response = await fetch("https://fakestoreapi.com/products")
         const products = await response.json()
+        loader.style.display = "none"
         products.forEach(product => {
             const productCard = document.createElement("div")
             productCard.classList.add("productCard")
