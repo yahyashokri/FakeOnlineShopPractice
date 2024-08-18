@@ -6,8 +6,17 @@
     <title>Online Shop</title>
 </head>
 <body>
-    <div class="head" id="header"></div>
+    <div class="head" id="header">
+        <img src="./assets/shopLogo.png" alt="shopLogo" class="shopLogo">
+        <div class="basketLogo">
+                <img src="./assets/basketLogo.png" alt="basketLogo" onclick="showBasket()" >
+            <p id="basketCount">0</p>
+        </div>
+        <p class="txt">Basket list will show in the console(takes 10 seconds)</p>
+            <img src="./assets/hamburgerMenu.png" alt="hamburgerMenu" class="hamburgerMenu">
+    </div>
     <div class="container" id="cont"></div>
     <script src="./app.js"></script>
+    <!-- <script src="./basket.js"></script> -->
 </body>
 </html>

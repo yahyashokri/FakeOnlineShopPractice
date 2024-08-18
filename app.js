@@ -18,7 +18,7 @@ addEventListener("load", async event =>{
             <p class="ratingCount">${product.rating.count} People rated</p>
             <img src="${product.image}" alt="${product.title}" class="image" width="350px" height="350px">
             <span class="category">Product category: ${product.category}</span>
-            <button class="btn">Add to Basket</button>
+            <button class="btn" id="${product.id}" onclick="checkId(this)">Add to Basket</button>
             `;
             //?Second way
             // const title = document.createElement("h2");
@@ -55,3 +55,44 @@ addEventListener("load", async event =>{
         console.error(err)
     }
 })
+
+
+let basket = []
+
+
+
+function checkId(element){
+    const id = element.id
+    if (!basket.includes(id)) {
+        basket.push(id)
+};
+    let basketCount = basket.length;
+    document.getElementById("basketCount").innerText = basketCount;
+}
+
+
+
+let basketItems = []
+
+
+function appendObject(array, newObject) {
+    const exists = array.some(item => JSON.stringify(item) === JSON.stringify(newObject));
+    if (!exists) {
+        array.push(newObject);
+    }
+}
+
+
+function showBasket(){
+    basket.forEach(async id=>{
+        try{
+        const response = await fetch("https://fakestoreapi.com/products")
+        const products = await response.json()
+        const product = products.find(product => product.id == id);
+        appendObject(basketItems,product)
+        }
+        catch(err){console.error(err)}
+    })
+    setTimeout(()=>{console.log(basketItems)},10000)
+    return basketItems
+}

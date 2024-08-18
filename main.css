@@ -3,7 +3,7 @@ body{
     height: 100vh;
     width: 100%;
     margin: 0px;
-    margin-top: 50px;
+    margin-top: 70px;
  display: grid;
  grid-template-rows: 50px 1fr;
  grid-template-columns: 1fr;
@@ -11,15 +11,18 @@ body{
 }
 .head{
     grid-area: 1/1/2/2;
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color:rgb(172, 169, 169);
     position: fixed;
     width: 100%;
     top:0px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     z-index: 2;
+    display: grid;
+    grid-template-columns: 300px 120px auto 70px;
+    grid-template-rows: 1fr;
 }
 .container{
     display: grid;
@@ -54,7 +57,7 @@ body{
 }
 .productCard h2:hover {
     color: rgb(192, 192, 192);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-shadow: 1.3px 1.3px 3px rgba(0, 0, 0, 0.7);
 }
 .productCard p {
     font-size: 0.9em;
@@ -104,7 +107,52 @@ body{
     grid-area: 6/1/7/2;
     color: rgba(22, 21, 21, 0.644);
     display: block;
+    z-index: 1;
 }
 .btn{
     grid-area:6/2/7/4 ;
+}
+.hamburgerMenu{
+    grid-area: 1/4/2/5;
+    height: 65px;
+    width: 65px;
+}
+.shopLogo{
+    grid-area: 1/1/2/2;
+    height: 70px;
+    width: 300px;
+    border-bottom-left-radius: 20px;
+    border-right: rgb(250, 16, 16)   ;
+    border-style: initial;
+}
+.basketLogo{
+    grid-area: 1/2/2/3;
+    height: 67px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 3px;
+}
+.basketLogo:hover{
+    cursor: pointer;
+    transform: scale(1.02);
+    opacity: 0.8;
+}
+#basketCount{
+    grid-area: 1/2/2/3;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 27px;
+    left: 73px;
+    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+    color:white;
+
+}
+.txt{
+    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+    color:white;
 }
